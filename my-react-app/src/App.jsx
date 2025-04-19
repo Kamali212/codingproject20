@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './styles.css';
 import Gallery from './Gallery.jsx';
 //Variables for the App component
 function App() {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TourCard from './TourCard';
+import './styles.css';
 
 const Gallery = ({ tours, loading, error, onRemoveTour }) => {
     const [selectedDestination, setSelectedDestination] = useState('all');
