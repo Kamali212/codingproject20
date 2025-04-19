@@ -3,8 +3,8 @@ import TourCard from './TourCard';
 
 const Gallery = ({ tours, loading, error, onRemoveTour }) => {
     const [selectedDestination, setSelectedDestination] = useState('all');
-    const destinations = ['all', ...new Set(tours.map(tour => tour.destination))];
-    const filteredTours = selectedDestination === 'all' ? tours : tours.filter(tour => tour.destination === selectedDestination);
+    const destinations = ['all', ...new Set(tours.map(tour => tour.name))];
+    const filteredTours = selectedDestination === 'all' ? tours : tours.filter(tour => tour.name === selectedDestination);
     if (loading) {
         return <div className="loading">Loading...</div>;
     }
@@ -27,7 +27,7 @@ const Gallery = ({ tours, loading, error, onRemoveTour }) => {
             ) : (
                 <div className="tour-cards">
                     {filteredTours.map(tour => (
-                        <TourCard key={tour.id} tour={tour} onRemoveTour={onRemoveTour} />
+                        <TourCard key={tour.id} {...tour} onRemoveTour={onRemoveTour} />
                     ))}
                 </div>
             )}

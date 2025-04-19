@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Gallery from './components/Gallery';
-import './styles/styles.css';
+import Gallery from './Gallery.jsx';
 //Variables for the App component
 function App() {
   const [tours, setTours] = useState([]);
@@ -11,7 +10,7 @@ function App() {
   const fetchTours = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://course-api.com/react-tours-project');
+      const res = await fetch('https://www.course-api.com/react-tours-project');
       const data = await res.json();
       setTours(data);
       setError(null);
