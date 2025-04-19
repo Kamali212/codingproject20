@@ -10,7 +10,7 @@ const DestinationSelector = ({ tours, onDestinationChange }) => {
         onDestinationChange(destination); // Pass the selected destination up to App.jsx
     };
 
-    // Extract unique tour names
+    // Extract tour names
     const uniqueTours = [...new Set(tours.map((tour) => tour.name))];
 // Render the destination selector
     return (

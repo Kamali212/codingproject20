@@ -3,15 +3,17 @@ import TourCard from './TourCard';
 import './styles.css';
 
 const Gallery = ({ tours, loading, error, onRemoveTour }) => {
-    const [selectedDestination, setSelectedDestination] = useState('all');
-    const destinations = ['all', ...new Set(tours.map(tour => tour.name))];
-    const filteredTours = selectedDestination === 'all' ? tours : tours.filter(tour => tour.name === selectedDestination);
+    const [selectedDestination, setSelectedDestination] = useState('all'); // Store the selected destination
+    const destinations = ['all', ...new Set(tours.map(tour => tour.name))]; // Array of unique destinations
+    const filteredTours = selectedDestination === 'all' ? tours : tours.filter(tour => tour.name === selectedDestination); // Filter tours based on selected destination 
+    // Loading and error handling
     if (loading) {
         return <div className="loading">Loading...</div>;
     }
     if (error) {
         return <div className="error">Error fetching tours. Please try again later.</div>;
     }
+    // Render the gallery
     return (
         <section className="gallery">
             <h2>Tour Gallery</h2>
